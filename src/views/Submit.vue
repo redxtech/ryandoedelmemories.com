@@ -22,7 +22,7 @@
 
               <div class="field">
                 <label class="label">contact - feel free to leave this blank - it is only used by us if we love
-                  your picture(s) and would like to ask you for more</label>
+                  your picture(s) and would like to ask you if you have more.</label>
                 <div class="control">
                   <input class="input" type="email" placeholder="email" v-model.lazy="form.email">
                 </div>
@@ -49,7 +49,8 @@
 
               <div class="field">
                 <div class="control">
-                  <button class="button is-link" type="submit">submit</button>
+                  <button v-if="imagesReady" class="button is-link" type="submit">submit</button>
+                  <button v-else class="button is-link is-loading">submit</button>
                 </div>
               </div>
             </vue-form>
@@ -63,29 +64,44 @@
 </template>
 
 <script>
+  import r2 from 'r2'
   import { upload } from '../assets/imgur'
 
   export default {
     name: 'Submit',
     data () {
       return {
-        images: [],
+        submitted: false,
+        imagesReady: true,
         form: {
           name: '',
           email: '',
           story: '',
-          picture: ''
+          picture: '',
+          images: []
         },
         formState: {}
       }
     },
     methods: {
-      onSubmit () {
-        console.log('submitted.')
+      async onSubmit () {
+        const req = await r2.post('http://localhost:8000/submit-form', {
+          json: {
+            name: this.form.name,
+            email: this.form.email,
+            story: this.form.story,
+            images: this.form.images
+          }
+        })
+        const resp = await req.response
+        const json = resp.json()
+        console.log(json)
+        this.submitted = true
       },
       async uploadPictures (e) {
+        this.imagesReady = false
         const uploaded = await upload(e.target.files)
-        const newValues = uploaded.map(item => {
+        this.form.images = uploaded.map(item => {
           const { data } = item
           return {
             id: data.id,
@@ -94,7 +110,7 @@
             width: data.width
           }
         })
-        console.log(newValues)
+        this.imagesReady = true
       }
     }
   }

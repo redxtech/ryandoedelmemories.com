@@ -5,16 +5,26 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "server": "node server/index.js",
+    "server:dev": "nodemon server/index.js --ignore src"
   },
   "dependencies": {
+    "assert": "^1.4.1",
     "bulma": "^0.7.2",
+    "dotenv": "^6.1.0",
+    "koa": "^2.5.3",
+    "koa-bodyparser": "^4.2.1",
+    "koa-json": "^2.0.2",
+    "koa-router": "^7.4.0",
+    "koa-static": "^5.0.0",
     "mongo": "^0.1.0",
     "r2": "^2.0.1",
     "vue": "^2.5.17",
     "vue-form": "^4.10.1",
     "vue-router": "^3.0.1",
-    "vuex": "^3.0.1"
+    "vuex": "^3.0.1",
+    "whatwg-fetch": "^3.0.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.1",
@@ -22,6 +32,7 @@
     "@vue/cli-service": "^3.0.1",
     "@vue/eslint-config-standard": "^3.0.5",
     "node-sass": "^4.9.0",
+    "nodemon": "^1.18.4",
     "sass-loader": "^7.0.1",
     "vue-template-compiler": "^2.5.17"
   }
