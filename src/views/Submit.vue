@@ -16,17 +16,23 @@
               <div class="field">
                 <label class="label">name - you can submit something anonymously by leaving this blank.</label>
                 <div class="control">
-                  <input class="input" type="text" placeholder="name" v-model.lazy="form.name">
+                  <input class="input" type="text" placeholder="name" v-model="form.name">
                 </div>
               </div>
 
-              <div class="field">
-                <label class="label">contact - feel free to leave this blank - it is only used by us if we love
-                  your picture(s) and would like to ask you if you have more.</label>
-                <div class="control">
-                  <input class="input" type="email" placeholder="email" v-model.lazy="form.email">
+              <validate tag="label">
+                <div class="field">
+                  <label class="label">email - feel free to leave this blank - it is only used by us if we love
+                    your picture(s) and would like to ask you if you have more.</label>
+                  <div class="control">
+                    <input :class="{input: true, 'is-danger': validEmail}"
+                           type="email"
+                           name="email"
+                           placeholder="email"
+                           v-model="form.email">
+                  </div>
                 </div>
-              </div>
+              </validate>
 
               <div class="field">
                 <label class="label">story or memory.</label>
@@ -38,7 +44,8 @@
               <div class="field">
                 <div class="file">
                   <label class="file-label">
-                    <input id="pictures" class="file-input" type="file" multiple @change="uploadPictures">
+                    <input id="pictures" class="file-input" type="file" accept="image/*" multiple
+                           @change="uploadPictures">
                     <span class="file-cta">
                     <span class="file-icon"><i class="fas fa-upload"></i></span>
                     <span class="file-label">choose a file</span>
@@ -85,18 +92,31 @@
     },
     methods: {
       async onSubmit () {
-        const req = await r2.post('http://localhost:8000/submit-form', {
-          json: {
-            name: this.form.name,
-            email: this.form.email,
-            story: this.form.story,
-            images: this.form.images
+        if (this.form.story.length === 0 && this.form.images.length === 0) {
+          this.sendNotification(1)
+        } else {
+          if (!this.formState.$invalid) {
+            const req = await r2.post('http://localhost:8000/submit-form', {
+              json: {
+                name: this.form.name,
+                email: this.form.email,
+                story: this.form.story,
+                images: this.form.images
+              }
+            })
+            const resp = await req.response
+            const json = resp.json()
+            console.log(json)
+            this.sendNotification(0)
           }
-        })
-        const resp = await req.response
-        const json = resp.json()
-        console.log(json)
-        this.submitted = true
+        }
+      },
+      async sendNotification (type) {
+        if (type === 0) {
+          alert('submitted')
+        } else if (type === 1) {
+          alert('you must at least fill out the story or upload some photos')
+        }
       },
       async uploadPictures (e) {
         this.imagesReady = false
@@ -111,6 +131,19 @@
           }
         })
         this.imagesReady = true
+      }
+    },
+    computed: {
+      validEmail () {
+        if (this.formState.hasOwnProperty('email')) {
+          if (this.formState.email.hasOwnProperty('$invalid')) {
+            return this.formState.email.$invalid
+          } else {
+            return false
+          }
+        } else {
+          return false
+        }
       }
     }
   }
