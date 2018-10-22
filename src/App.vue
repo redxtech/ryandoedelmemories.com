@@ -1,17 +1,17 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link>
+      <router-link to="/">home</router-link>
       |
-      <router-link to="/submit">Submit</router-link>
+      <router-link to="/submit">submit</router-link>
       |
-      <router-link to="/gallery">Gallery</router-link>
+      <router-link to="/gallery">gallery</router-link>
       |
       <a
         href="https://docs.google.com/spreadsheets/d/1xukxpF-tzJXwAELePu9TtQHo9mw935eEYWLiQhij_jk/edit?usp=sharing"
         target="_blank"
       >
-        Food Donations
+        meal planner
       </a>
     </div>
     <router-view/>
@@ -19,6 +19,8 @@
 </template>
 
 <style lang="scss">
+  @import '~bulma/bulma';
+
   #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
