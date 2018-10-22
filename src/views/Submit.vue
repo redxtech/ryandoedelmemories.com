@@ -11,6 +11,18 @@
       <div class="columns">
         <div class="column"/>
         <div class="column is-three-fifths">
+          <div v-if="notifications.success" class="notification is-success">
+            <button class="delete" @click="closeNotification('success')"></button>
+            Success! Your submission has been recorded.
+          </div>
+          <div v-if="notifications.empty" class="notification is-danger">
+            <button class="delete" @click="closeNotification('empty')"></button>
+            Failure! You must at least fill out the story or upload some photos.
+          </div>
+          <div v-if="notifications.failure" class="notification is-danger">
+            <button class="delete" @click="closeNotification('failure')"></button>
+            Failure! There was an error recording your submission.
+          </div>
           <div class="form">
             <vue-form :state="formState" @submit.prevent="onSubmit">
               <div class="field">
@@ -80,6 +92,7 @@
       return {
         submitted: false,
         imagesReady: true,
+        notifications: { success: false, empty: false, failure: false },
         form: {
           name: '',
           email: '',
@@ -93,7 +106,7 @@
     methods: {
       async onSubmit () {
         if (this.form.story.length === 0 && this.form.images.length === 0) {
-          this.sendNotification(1)
+          this.sendNotification('empty')
         } else {
           if (!this.formState.$invalid) {
             const req = await r2.post('http://localhost:8000/submit-form', {
@@ -105,18 +118,20 @@
               }
             })
             const resp = await req.response
-            const json = resp.json()
+            const json = await resp.json()
+            this.sendNotification(json.status)
             console.log(json)
-            this.sendNotification(0)
           }
         }
       },
       async sendNotification (type) {
-        if (type === 0) {
-          alert('submitted')
-        } else if (type === 1) {
-          alert('you must at least fill out the story or upload some photos')
-        }
+        this.notifications[type] = true
+        setTimeout(() => {
+          this.closeNotification(type)
+        }, 5000)
+      },
+      closeNotification (type) {
+        this.notifications[type] = false
       },
       async uploadPictures (e) {
         this.imagesReady = false
