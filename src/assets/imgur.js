@@ -19,7 +19,7 @@ const uploadIndividual = file => {
             type: 'base64'
           },
           headers: {
-            'Authorization': `Client-ID ${process.env.VUE_APP_API_KEY}`,
+            'Authorization': `Client-ID ${process.env.VUE_APP_CLIENT_ID}`,
             'content-type': 'multipart/form-data'
           }
         })
