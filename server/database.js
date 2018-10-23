@@ -58,7 +58,11 @@ const fetchGallery = async (ctx) => {
       }, async (err, client) => {
         assert.equal(null, err)
         const db = client.db('memories')
-        const memories = await db.collection('memories').find().toArray()
+        const memoriesFromDB = await db.collection('memories')
+          .find()
+          .toArray()
+        const memories = Array.from(memoriesFromDB)
+          .filter(memory => !memory.skip)
         ctx.body = { status: 'success', count: memories.length, memories }
         resolve()
         client.close()
