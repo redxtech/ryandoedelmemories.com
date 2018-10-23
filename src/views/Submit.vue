@@ -13,7 +13,9 @@
         <div class="column is-three-fifths">
           <div v-if="notifications.success" class="notification is-success">
             <button class="delete" @click="closeNotification('success')"></button>
-            Success! Your submission has been recorded. View it in the <router-link to="gallery">gallery</router-link>.
+            Success! Your submission has been recorded. View it in the
+            <router-link to="gallery">gallery</router-link>
+            .
           </div>
           <div v-if="notifications.empty" class="notification is-danger">
             <button class="delete" @click="closeNotification('empty')"></button>
@@ -32,8 +34,8 @@
                 </div>
               </div>
 
-                <div class="field">
-                  <validate>
+              <div class="field">
+                <validate>
                   <label class="label">email - feel free to leave this blank - it is only used by us if we love
                     your picture(s) and would like to ask you if you have more.</label>
                   <div class="control">
@@ -43,8 +45,8 @@
                            placeholder="email"
                            v-model="form.email">
                   </div>
-                  </validate>
-                </div>
+                </validate>
+              </div>
 
               <div class="field">
                 <label class="label">story or memory.</label>

@@ -4,8 +4,8 @@ const json = require('koa-json')
 const bodyParser = require('koa-bodyparser')
 // const koaStatic = require('koa-static')
 
-const {submitForm, fetchGallery} = require('./database')
-const {cors, responseTime, home} = require('./funcs')
+const { submitForm, fetchGallery } = require('./database')
+const { cors, responseTime, home } = require('./funcs')
 
 const app = new Koa()
 const r = new Router()
