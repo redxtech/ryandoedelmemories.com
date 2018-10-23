@@ -52,7 +52,7 @@
         const { status, count, memories } = json
         this.status = status
         this.count = count
-        this.memories = memories
+        this.memories = memories.reverse()
       } catch (e) {
         console.log(e)
       }
