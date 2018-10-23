@@ -6,9 +6,9 @@
     <div v-if="hasImages">
       <template v-for="(image, i) in images">
         <figure v-if="i===0" :key="image.id" class="image">
-          <img alt="image" :src="image.link" v-img="options">
+          <img :alt="`Image ${i + 1}`" :src="image.link" v-img="options">
         </figure>
-        <img v-else :key="image.id" :src="image.link" alt="image" v-img="options" class="is-hidden"/>
+        <img v-else :key="image.id" :src="image.link" :alt="`Image ${i + 1}`" v-img="options" class="is-hidden"/>
       </template>
     </div>
   </div>
