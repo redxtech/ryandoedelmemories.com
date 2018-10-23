@@ -141,6 +141,7 @@
           const { data } = item
           return {
             id: data.id,
+            link: data.link,
             delete: data.deletehash,
             height: data.height,
             width: data.width
