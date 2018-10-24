@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div id="nav">
+    <div id="nav" class="nav has-text-centered">
       <router-link to="/">home</router-link>
       |
       <router-link to="/submit">submit</router-link>
@@ -30,7 +30,7 @@
     color: #2c3e50;
   }
 
-  #nav {
+  .nav {
     padding: 2rem;
 
     a {
