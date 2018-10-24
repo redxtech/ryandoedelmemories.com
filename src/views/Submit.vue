@@ -3,7 +3,7 @@
     <div class="hero">
       <div class="hero-body">
         <div class="container">
-          <h1 class="title">submit something.</h1>
+          <h1 class="title has-text-centered">submit something.</h1>
         </div>
       </div>
     </div>

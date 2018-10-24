@@ -3,8 +3,7 @@
     <div class="hero">
       <div class="hero-body">
         <div class="container">
-          <h1 v-if="count === 1" class="title">there is currently {{ count }} memory stored here.</h1>
-          <h1 v-else class="title">there are currently {{ count }} memories stored here.</h1>
+          <h1 class="title has-text-centered" v-text="countMessage"></h1>
         </div>
       </div>
     </div>
@@ -55,6 +54,12 @@
         this.memories = memories.reverse()
       } catch (e) {
         console.log(e)
+      }
+    },
+    computed: {
+      countMessage () {
+        const c = this.count === 1
+        return `there ${c ? 'is' : 'are'} currently ${this.count} memor${c ? 'y' : 'ies'} stored here.`
       }
     }
   }
