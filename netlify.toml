@@ -1,0 +1,24 @@
+# Redirect default Netlify subdomain to primary domain
+[[redirects]]
+  from="http://ryan-memories.netlify.com/*"
+  to="https://ryandoedelmemories.com/:splat"
+  status=301
+  force=true
+
+# Strip WWW
+[[redirects]]
+  from="http://www.ryandoedelmemories.com/*"
+  to="https://ryandoedelmemories.com/:splat"
+  status=301
+  force=true
+[[redirects]]
+  from="https://www.ryandoedelmemories.com/*"
+  to="https://ryandoedelmemories.com/:splat"
+  status=301
+  force=true
+
+# SPA
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
