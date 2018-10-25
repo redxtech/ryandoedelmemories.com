@@ -2,9 +2,10 @@
   <section id="home">
     <div class="hero">
       <div class="hero-body">
-        <div class="container">
-          <h1 class="title is-1 has-text-centered">Ryan Doedel</h1>
-          <h2 class="subtitle is-2 has-text-centered">
+        <div class="container has-text-centered">
+          <h1 class="title is-1">Ryan Doedel</h1>
+          <h2 class="subtitle is-3 ">(July 21, 2001 - October 18, 2018)</h2>
+          <h2 class="subtitle is-2">
             This is a place where you can submit a picture and/or a
             memory of Ryan to be shown in the
             <router-link to="gallery">gallery</router-link>
