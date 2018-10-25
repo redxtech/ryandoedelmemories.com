@@ -48,4 +48,8 @@
       }
     }
   }
+
+  .columns {
+    margin: 0;
+  }
 </style>
