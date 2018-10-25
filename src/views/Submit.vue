@@ -28,35 +28,17 @@
           <div class="form">
             <vue-form :state="formState" @submit.prevent="onSubmit">
               <div class="field">
-                <label class="label">name - you can submit something anonymously by leaving this blank.</label>
-                <div class="control">
-                  <input class="input" type="text" placeholder="name" v-model="form.name">
-                </div>
-              </div>
-
-              <div class="field">
-                <validate>
-                  <label class="label">email - feel free to leave this blank - it is only used by us if we love
-                    your picture(s) and would like to ask you if you have more.</label>
-                  <div class="control">
-                    <input :class="{input: true, 'is-danger': validEmail}"
-                           type="email"
-                           name="email"
-                           placeholder="email"
-                           v-model="form.email">
-                  </div>
-                </validate>
-              </div>
-
-              <div class="field">
-                <label class="label">story or memory.</label>
+                <label class="label">share a story or memory that will be displayed in the gallery:</label>
                 <div class="control">
                   <textarea class="textarea" placeholder="story or memory" v-model="form.story"></textarea>
                 </div>
               </div>
 
               <div class="field">
-                <div class="file">
+                <label class="label">
+                  upload pictures that will be displayed in the gallery and shared with Ryan's family
+                </label>
+                <div class="file is-primary">
                   <label class="file-label">
                     <input id="pictures" class="file-input" type="file" accept="image/*" multiple
                            @change="uploadPictures">
@@ -66,6 +48,27 @@
                   </span>
                   </label>
                 </div>
+              </div>
+
+              <div class="field">
+                <label class="label">name - you can submit something anonymously by leaving this blank:</label>
+                <div class="control">
+                  <input class="input" type="text" placeholder="name" v-model="form.name">
+                </div>
+              </div>
+
+              <div class="field">
+                <validate>
+                  <label class="label">email - feel free to leave this blank - it is only used by us if we love
+                    your picture(s) and would like to ask you if you have more:</label>
+                  <div class="control">
+                    <input :class="{input: true, 'is-danger': validEmail}"
+                           type="email"
+                           name="email"
+                           placeholder="email"
+                           v-model="form.email">
+                  </div>
+                </validate>
               </div>
 
               <div class="field">

@@ -1,7 +1,6 @@
 <template>
   <div class="box">
     <h2 class="title is-3 is-lowercase has-text-weight-light" v-text="name"></h2>
-    <h3 v-if="hasEmail" class="subtitle is-5 is-lowercase has-text-weight-light" v-text="email"></h3>
     <div v-if="hasStory" class="content">
       <p v-for="(paragraph, i) in storyParagraphs" :key="i" v-text="paragraph"></p>
     </div>
@@ -21,7 +20,6 @@
     name: 'Memory',
     props: {
       name: { required: false, default: 'anonymous' },
-      email: { required: false, default: 'anonymous' },
       story: { required: false, default: 'no story' },
       images: { required: false, default: [] }
     },
@@ -36,7 +34,6 @@
       this.options.group = this.images.map(image => image.id).join('+')
     },
     computed: {
-      hasEmail () { return this.email !== 'anonymous' },
       hasStory () { return this.story !== 'no story' },
       hasImages () { return this.images.length !== 0 },
       storyParagraphs () { return this.story.split('\n') }

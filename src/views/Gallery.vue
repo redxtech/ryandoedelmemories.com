@@ -15,7 +15,6 @@
             v-for="(memory, i) in memories"
             :key="`${memory.name}-${i}`"
             :name="memory.name"
-            :email="memory.email"
             :story="memory.story"
             :images="memory.images"
           />

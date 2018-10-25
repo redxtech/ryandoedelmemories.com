@@ -11,12 +11,10 @@
         href="https://docs.google.com/spreadsheets/d/1xukxpF-tzJXwAELePu9TtQHo9mw935eEYWLiQhij_jk/edit?usp=sharing"
         target="_blank"
       >
-        meal planner
+        doedel meal planner
       </a>
     </div>
-    <keep-alive>
-      <router-view/>
-    </keep-alive>
+    <router-view/>
   </div>
 </template>
 

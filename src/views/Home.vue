@@ -26,37 +26,24 @@
               <img src="../assets/ryan.jpg" alt="Ryan playing football">
             </picture>
           </figure>
-          <p class="content">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer malesuada sagittis turpis sit amet
-            tincidunt. Nullam malesuada tristique malesuada. Quisque malesuada dignissim tortor, vel eleifend ipsum
-            luctus sed. Quisque luctus leo efficitur finibus tincidunt. Suspendisse tincidunt ac orci vel venenatis.
-            Donec luctus neque in odio volutpat accumsan. Nam tincidunt ultrices turpis, quis lacinia magna scelerisque
-            sed. Nunc nibh libero, pharetra sed arcu et, eleifend gravida magna. In hac habitasse platea dictumst.
-            Phasellus tincidunt a libero eu commodo. Nunc orci dui, pharetra id fringilla quis, porta in urna. In
-            pulvinar pretium lobortis. Quisque quis risus libero. Pellentesque odio elit, sollicitudin eget convallis
-            vitae, tristique dignissim metus.
-          </p>
-          <p>
-            Donec bibendum sodales viverra. Proin a interdum lacus, sed maximus lacus. Aenean pretium lacus ante, eu
-            fermentum velit sollicitudin vel. Duis gravida sollicitudin magna maximus rhoncus. Cras et nunc non purus
-            faucibus fermentum id sed nulla. Duis sagittis turpis justo, eu aliquet erat ultrices id. Praesent tempor
-            rhoncus nunc, id imperdiet odio ullamcorper sit amet. Praesent ullamcorper sit amet lorem id lobortis.
-            Maecenas placerat tellus ut leo bibendum, quis lobortis leo blandit. Ut egestas lectus a porttitor auctor.
-            Nullam urna mi, ultricies sit amet nulla tincidunt, aliquam dictum orci.
-          </p>
-          <p>
-            Donec viverra sem vitae metus consectetur tincidunt. Vivamus eleifend egestas eros, vel sollicitudin eros
-            feugiat at. Curabitur eget commodo libero. Mauris viverra nec ligula vel placerat. Sed at est sodales,
-            ullamcorper magna non, maximus nibh. Cras quis enim ac ipsum feugiat rhoncus. Suspendisse at tellus eu
-            libero aliquam porttitor eu id ante. Proin eros augue, pretium et dolor eleifend, rutrum venenatis dui.
-            Praesent blandit est quis tempor volutpat.
-          </p>
-          <p>
-            Maecenas pellentesque pretium dui, molestie posuere neque. Vivamus non ante id justo cursus sollicitudin.
-            Maecenas mattis lorem a justo congue aliquet. Nullam sed augue sit amet nisl congue dignissim. Suspendisse
-            venenatis gravida elit vel mollis. Aliquam neque sem, malesuada non sem id, euismod scelerisque nisl.
-            Vestibulum eget nisl sed eros eleifend dictum non sed justo. Morbi imperdiet posuere euismod.
-          </p>
+          <div class="has-text-justified">
+            <p class="content">
+              Ryan was a true friend and was loved by all who knew him. His kind heart and
+              generous spirit shines on in our memories.
+            </p>
+            <p class="content">
+              Ryan had a love of sports, in particular hockey and football. He played hockey with Trails West and the
+              Recreation Hockey Community leagues. Ryan played football, beginning with the Wildcats and, more recently,
+              with the Ernest Manning High School Griffins. Ryan's desire to excel was evident in his sports pursuits
+              and
+              he shone through not only as hard-working and dedicated, but a true team player. Not only a sportsman,
+              Ryan
+              was a talented music producer.
+            </p>
+            <p class="content">
+              Ryan died in a tragic car accident and his good friend, Dante Bravi, was seriously injured.
+            </p>
+          </div>
         </div>
         <div class="column is-one-fifth"/>
       </div>
@@ -65,7 +52,7 @@
       <div class="columns has-text-centered">
         <div class="column is-one-fifth"></div>
         <div class="column">
-          <h1 class="title is-4">here's a link to his instagram page and to the gofundme page for each of them</h1>
+          <h1 class="title is-4">here's a link to Ryan's instagram page and to the gofundme page for each of them</h1>
         </div>
         <div class="column is-one-fifth"></div>
       </div>
