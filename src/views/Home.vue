@@ -19,7 +19,11 @@
         <div class="column is-one-fifth"/>
         <div class="column">
           <figure class="image">
-            <img src="../assets/ryan.jpg" alt="Ryan playing football">
+            <picture>
+              <source srcset="../assets/ryan.webp" type="image/webp">
+              <source srcset="../assets/ryan.jpg" type="image/jpeg">
+              <img src="../assets/ryan.jpg" alt="Ryan playing football">
+            </picture>
           </figure>
           <p class="content">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer malesuada sagittis turpis sit amet
