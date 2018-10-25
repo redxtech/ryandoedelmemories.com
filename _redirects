@@ -1,5 +1,9 @@
 # Redirect default Netlify subdomain to primary domain
-http://ryan-memories.netlify.com/* http://ryandoedelmemories.com/:splat 301!
+http://ryan-memories.netlify.com/* https://ryandoedelmemories.com/:splat 301!
+
+# Redirect www subdomain to primary domain
+http://www.ryandoedelmemories.com/* https://ryandoedelmemories.com/:splat 301!
+https://www.ryandoedelmemories.com/* https://ryandoedelmemories.com/:splat 301!
 
 # History mode for SPA
 /* /index.html 200
