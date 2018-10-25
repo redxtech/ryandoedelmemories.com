@@ -43,7 +43,11 @@ const submitForm = async (ctx) => {
     })
   } else {
     ctx.status = 200
-    ctx.set('Access-Control-Allow-Origin', '*')
+    const allowedOrigins = process.env.ORIGINS.split(',')
+    const origin = ctx.req.headers.origin
+    if (allowedOrigins.indexOf(origin) > -1) {
+      ctx.set('Access-Control-Allow-Origin', origin)
+    }
     ctx.set('Access-Control-Allow-Headers',
       'Origin, X-Requested-With, Content-Type, Accept')
     ctx.set('Access-Control-Allow-Methods', 'POST, GET, PUT, DELETE, OPTIONS')
