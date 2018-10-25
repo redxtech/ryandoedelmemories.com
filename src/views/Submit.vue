@@ -59,8 +59,10 @@
 
               <div class="field">
                 <validate>
-                  <label class="label">email - feel free to leave this blank - it is only used by us if we love
-                    your picture(s) and would like to ask you if you have more:</label>
+                  <label class="label">
+                    email - feel free to leave this blank - it will not be displayed in the gallery and is only kept by
+                    us to potentially ask you for more photos if we love yours:
+                  </label>
                   <div class="control">
                     <input :class="{input: true, 'is-danger': validEmail}"
                            type="email"
