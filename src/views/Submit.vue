@@ -62,7 +62,7 @@
                            @change="uploadPictures">
                     <span class="file-cta">
                     <span class="file-icon"><i class="fas fa-upload"></i></span>
-                    <span class="file-label">choose a file</span>
+                    <span class="file-label">upload a picture</span>
                   </span>
                   </label>
                 </div>
