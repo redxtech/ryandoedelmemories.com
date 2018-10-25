@@ -1,0 +1,5 @@
+# Redirect default Netlify subdomain to primary domain
+http://ryan-memories.netlify.com/* http://ryandoedelmemories.com/:splat 301!
+
+# History mode for SPA
+/* /index.html 200
