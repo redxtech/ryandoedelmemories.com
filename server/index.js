@@ -7,6 +7,8 @@ const bodyParser = require('koa-bodyparser')
 const { submitForm, fetchGallery } = require('./database')
 const { cors, responseTime, home } = require('./funcs')
 
+require('dotenv').config()
+
 const app = new Koa()
 const r = new Router()
 
@@ -23,7 +25,6 @@ r.all('/fetch-gallery', fetchGallery)
 app.use(r.routes())
 
 const port = process.env.PORT || 8000
-// const port = process.env.PORT || 8080
 
 app.listen(port)
 console.log(`Listening on port ${port}...`)
