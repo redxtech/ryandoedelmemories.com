@@ -64,14 +64,16 @@
       <div class="columns has-text-centered">
         <div class="column is-one-fifth"></div>
         <div class="column">
-          <h1 class="title is-4">here's a link to his instagram page and to a gofundme</h1>
+          <h1 class="title is-4">here's a link to his instagram page and to the gofundme page for each of them</h1>
         </div>
         <div class="column is-one-fifth"></div>
       </div>
       <div id="nav-bottom" class="nav has-text-centered">
         <a href="https://www.instagram.com/r.doedel/" target="_blank">instagram</a>
         |
-        <a href="https://www.gofundme.com/in-memory-of-ryan-doedel" target="_blank">gofundme</a>
+        <a href="https://www.gofundme.com/in-memory-of-ryan-doedel" target="_blank">ryan</a>
+        |
+        <a href="https://www.gofundme.com/dante-bravi-family" target="_blank">dante</a>
       </div>
     </div>
   </section>
