@@ -60,8 +60,7 @@
               <div class="field">
                 <validate>
                   <label class="label">
-                    email - feel free to leave this blank - it will not be displayed in the gallery and is only kept by
-                    us to potentially ask you for more photos if we love yours:
+                    email - feel free to leave this blank - it is only for us to contact you if we need more details
                   </label>
                   <div class="control">
                     <input :class="{input: true, 'is-danger': validEmail}"
@@ -80,6 +79,9 @@
                 </div>
               </div>
             </vue-form>
+            <div class="top-padded">
+              <h1 class="title is-3 has-text-centered">thank you for sharing your memories</h1>
+            </div>
           </div>
         </div>
         <div class="column"/>
@@ -170,7 +172,3 @@
     }
   }
 </script>
-
-<style scoped lang="scss">
-
-</style>

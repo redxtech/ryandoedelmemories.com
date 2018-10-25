@@ -50,4 +50,8 @@
   .columns {
     margin: 0;
   }
+
+  .top-padded {
+    padding-top: 2rem;
+  }
 </style>

@@ -26,12 +26,12 @@
               <img src="../assets/ryan.jpg" alt="Ryan playing football">
             </picture>
           </figure>
-          <div class="has-text-justified">
-            <p class="content">
+          <div class="top-padded has-text-justified">
+            <p class="content is-medium">
               Ryan was a true friend and was loved by all who knew him. His kind heart and
               generous spirit shines on in our memories.
             </p>
-            <p class="content">
+            <p class="content is-medium">
               Ryan had a love of sports, in particular hockey and football. He played hockey with Trails West and the
               Recreation Hockey Community leagues. Ryan played football, beginning with the Wildcats and, more recently,
               with the Ernest Manning High School Griffins. Ryan's desire to excel was evident in his sports pursuits
@@ -40,7 +40,7 @@
               Ryan
               was a talented music producer.
             </p>
-            <p class="content">
+            <p class="content is-medium">
               Ryan died in a tragic car accident and his good friend, Dante Bravi, was seriously injured.
             </p>
           </div>
