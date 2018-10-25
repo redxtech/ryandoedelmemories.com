@@ -3,7 +3,7 @@ const assert = require('assert')
 
 require('dotenv').config()
 
-const client = new MongoClient(process.env.MONGO_URL, {
+const client = MongoClient.connect(process.env.MONGO_URL, {
   useNewUrlParser: true,
   reconnectTries: Number.MAX_VALUE,
   reconnectInterval: 1000
@@ -11,7 +11,7 @@ const client = new MongoClient(process.env.MONGO_URL, {
 
 const submitForm = async (ctx) => {
   if (ctx.request.method === 'POST') {
-    return new Promise((resolve, reject) => {
+    return new Promise(async (resolve, reject) => {
       const m = ctx.request.body
       const memory = {}
       memory.name = m.name || 'anonymous'
@@ -19,22 +19,16 @@ const submitForm = async (ctx) => {
       memory.story = m.story || 'no story'
       memory.images = m.images || []
       try {
-        MongoClient.connect(process.env.MONGO_URL, {
-          useNewUrlParser: true
-        }, async (err, client) => {
+        const db = (await client).db('memories')
+        db.collection('memories').insertOne(memory, (err, r) => {
           assert.equal(null, err)
-          const db = client.db('memories')
-          db.collection('memories').insertOne(memory, (err, r) => {
-            assert.equal(null, err)
-            assert.equal(1, r.insertedCount)
-            ctx.body = {
-              status: 'success',
-              insertedCount: r.insertedCount,
-              memory
-            }
-            client.close()
-            resolve()
-          })
+          assert.equal(1, r.insertedCount)
+          ctx.body = {
+            status: 'success',
+            insertedCount: r.insertedCount,
+            memory
+          }
+          resolve()
         })
       } catch (e) {
         ctx.body = { status: 'failure' }
@@ -55,22 +49,16 @@ const submitForm = async (ctx) => {
 }
 
 const fetchGallery = async (ctx) => {
-  return new Promise((resolve, reject) => {
+  return new Promise(async (resolve, reject) => {
     try {
-      MongoClient.connect(process.env.MONGO_URL, {
-        useNewUrlParser: true
-      }, async (err, client) => {
-        assert.equal(null, err)
-        const db = client.db('memories')
-        const memoriesFromDB = await db.collection('memories')
-          .find()
-          .toArray()
-        const memories = Array.from(memoriesFromDB)
-          .filter(memory => !memory.skip)
-        ctx.body = { status: 'success', count: memories.length, memories }
-        resolve()
-        client.close()
-      })
+      const db = (await client).db('memories')
+      const memoriesFromDB = await db.collection('memories')
+        .find()
+        .toArray()
+      const memories = Array.from(memoriesFromDB)
+        .filter(memory => !memory.skip)
+      ctx.body = { status: 'success', count: memories.length, memories }
+      resolve()
     } catch (e) {
       ctx.body = { status: 'failure' }
       reject(e)
