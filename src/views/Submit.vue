@@ -80,7 +80,7 @@
               </div>
             </vue-form>
             <div class="top-padded">
-              <h1 class="title is-3 has-text-centered">thank you for sharing your memories</h1>
+              <h1 class="title is-3 has-text-centered">thank you for sharing your memories.</h1>
             </div>
           </div>
         </div>
