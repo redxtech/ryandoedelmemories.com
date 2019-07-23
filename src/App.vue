@@ -6,13 +6,6 @@
       <router-link to="/submit">submit</router-link>
       |
       <router-link to="/gallery">gallery</router-link>
-      |
-      <a
-        href="https://docs.google.com/spreadsheets/d/1xukxpF-tzJXwAELePu9TtQHo9mw935eEYWLiQhij_jk/edit?usp=sharing"
-        target="_blank"
-      >
-        doedel meal planner
-      </a>
     </div>
     <router-view/>
   </div>
