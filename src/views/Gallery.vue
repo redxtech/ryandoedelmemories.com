@@ -52,6 +52,7 @@
         this.count = count
         this.memories = memories.reverse()
       } catch (e) {
+        this.status = 'error'
         console.log(e)
       }
     },
