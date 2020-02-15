@@ -34,7 +34,7 @@
     name: 'Gallery',
     data () {
       return {
-        status: '',
+        status: 'loading',
         count: 0,
         memories: []
       }
@@ -58,7 +58,7 @@
     computed: {
       countMessage () {
         const c = this.count === 1
-        return this.status === 'success'
+        return this.status === 'success' || this.status === 'loading'
           ? `there ${c ? 'is' : 'are'} currently ${this.count} memor${c ? 'y' : 'ies'} stored here.`
           : 'there is currently an error with the gallery.'
       }
