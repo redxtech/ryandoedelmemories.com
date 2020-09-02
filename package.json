@@ -14,7 +14,7 @@
     "bulma": "^0.7.2",
     "dotenv": "^6.1.0",
     "koa": "^2.5.3",
-    "koa-bodyparser": "^4.2.1",
+    "koa-bodyparser": "^4.3.0",
     "koa-json": "^2.0.2",
     "koa-router": "^7.4.0",
     "koa-static": "^5.0.0",
