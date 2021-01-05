@@ -3,8 +3,6 @@
     <div id="nav" class="nav has-text-centered">
       <router-link to="/">home</router-link>
       |
-      <router-link to="/submit">submit</router-link>
-      |
       <router-link to="/gallery">gallery</router-link>
     </div>
     <router-view/>
