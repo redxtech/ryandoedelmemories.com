@@ -14,11 +14,6 @@ export default new Router({
       component: Home
     },
     {
-      path: '/submit',
-      name: 'submit',
-      component: () => import(/* webpackChunkName: "submit" */ './views/Submit.vue')
-    },
-    {
       path: '/gallery',
       name: 'gallery',
       component: () => import(/* webpackChunkName: "gallery" */ './views/Gallery.vue')
